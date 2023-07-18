@@ -23,8 +23,14 @@
 				alert("You clicked Cancel!");
 			}
 		}
-		function showConfirmPanel() {
-			console.write("........")
-		}				
+		function showInputPanel() {
+			var userInput = prompt("Enter your name:", "");
+			if (userInput !== null) {
+				handleUserInput(userInput);
+			}
+		}
+		function handleUserInput(input) {
+			window.webkit.messageHandlers.userInputHandler.postMessage(input);
+		}
 	</script>
 </html>	
